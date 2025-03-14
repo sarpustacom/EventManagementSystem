@@ -1,0 +1,17 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Account</h1>
+
+<div class="container">
+    <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+    <h5>@{{ user.username }}</h5>
+    <p>Organizator</p>
+    <br>
+    <a href="/organizator/dashboard/account/edit" class="btn btn-primary">Edit Account</a>
+    <a href="/organizator/dashboard/account/change-password" class="btn btn-primary">Change Password</a>
+    <a href="/organizator/dashboard/account/delete" class="btn btn-danger">Delete Account</a>
+    
+</div>
+{% endblock %}

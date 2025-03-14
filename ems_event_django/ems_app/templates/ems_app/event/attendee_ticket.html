@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Ticket</h1>
+    <h3>Attendance Id: {{attendee.id}}</h3>
+    <div class="card">
+        <div class="card-body">
+            <img src="{{attendee.ticket.url}}" alt="" srcset="">
+            <a href="{{attendee.ticket.url}}" class="btn btn-primary" download>Download Ticket</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

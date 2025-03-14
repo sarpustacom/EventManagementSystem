@@ -1,0 +1,24 @@
+{% extends "dashboard_base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Delete Event?</h1>
+
+<p>This event will be deleted and all attendees will be removed from that event.</p>
+<form action="" method="post">
+    {% csrf_token %}
+    
+        
+            <form>
+                <button class="btn btn-danger icon-link" type="submit">
+                    <i class="bi bi-trash3-fill"></i>
+                    Delete Account
+                </button>
+                <br><br>                
+            </form>
+ 
+    
+</form>
+<p class="mt-5 mb-3 text-body-secondary">© 2025 SarpTech</p>
+
+{% endblock %}

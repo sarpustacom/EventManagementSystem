@@ -1,0 +1,30 @@
+{% extends "dashboard_base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% if error %}
+<div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+
+    <strong>Failed to add event: </strong> {{error}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endif %}
+<h1>Edit Event</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% for field in form %}
+    <div class="mb-3">
+        {{field.label_tag}}
+        {{field}}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary icon-link">
+        <i class="bi bi-pencil-fill"></i>
+        Edit Event
+    </button>
+</form>
+{% endblock %}

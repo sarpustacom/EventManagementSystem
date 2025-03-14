@@ -1,0 +1,30 @@
+{% extends "dashboard_base.html" %}
+{% load static %}
+
+{% block content %}
+<table class="table">
+    <thead class="thead-light">
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Registered At</th>
+        <th scope="col">Actions</th>
+    </thead>
+
+    {% for attendee in attendees %}
+    <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{attendee.name}}</td>
+        <td>{{attendee.email}}</td>
+        <td>{{attendee.phone}}</td>
+        <td>{{attendee.registered}}</td>
+        <td>
+            <a href="/organizator/dashboard/events/{{event.id}}/attendees/{{attendee.id}}/ticket" class="btn btn-secondary">Show Ticket</a>
+            <a href="/organizator/dashboard/events/{{event.id}}/attendees/{{attendee.id}}/delete" class="btn btn-danger">Remove Attendee</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends "dashboard_base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Ticket</h1>
+    <div class="card">
+        <div class="card-body">
+            <img src="{{ticket}}" alt="" srcset="">
+
+            <a href="{{ticket}}" class="btn btn-primary" download>Download Ticket</a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

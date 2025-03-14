@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h2>Attend Event: {{event.title}}</h2>
+<br>
+<p class="icon-link secondary">
+    <i class="bi bi-geo-alt-fill"></i>
+    {{event.location}}
+</p>
+<br>
+<p class="icon-link secondary">
+    <i class="bi bi-calendar"></i>
+    {{event.date}} {{event.time}}
+</p>
+<br>
+<form action="" method="post">
+{% csrf_token %}
+    {% for field in form %}
+<div class="mb-3">
+    {{field.label_tag}}
+    {{field}}
+</div>
+{% endfor %}
+
+<button type="submit" class="btn btn-primary icon-link">
+    <i class="bi bi-person-fill-add"></i>
+    Attend Event
+</button>
+</form>
+{% endblock %}

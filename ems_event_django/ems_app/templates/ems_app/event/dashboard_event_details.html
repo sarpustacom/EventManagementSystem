@@ -1,0 +1,32 @@
+{% extends "dashboard_base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container">
+    <img src="{{event.coverphoto.url}}" alt="{{event.title}}" srcset="">
+    <h2>{{event.title}}</h2>
+    <br>
+    <p class="icon-link secondary">
+        <i class="bi bi-person-circle"></i>
+        Organized by: @{{event.organizedby.username}}
+    </p>
+    <br>
+    <p class="icon-link secondary">
+        <i class="bi bi-geo-alt-fill"></i>
+        {{event.location}}
+    </p>
+    <br>
+    <p class="icon-link secondary">
+        <i class="bi bi-calendar"></i>
+        {{event.date}} {{event.time}}
+    </p>
+    <br>
+    <p>{{event.description}}</p>
+    <br>
+    <a href="/organizator/dashboard/events/{{event.id}}/attendees" class="btn btn-primary">See all attendees</a>
+    <a href="/organizator/dashboard/events/{{event.id}}/edit" class="btn btn-primary">Edit</a>
+    <a href="/organizator/dashboard/events/{{event.id}}/delete" class="btn btn-danger">Delete</a>
+</div>
+{% endblock %}
