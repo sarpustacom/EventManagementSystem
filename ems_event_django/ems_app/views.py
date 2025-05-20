@@ -101,7 +101,7 @@ def view_attendees(request, id):
 def delete_attendee(request, eid, aid):
     attendee = models.AttendeeModel.objects.get(id=aid)
     attendee.delete()
-    return redirect(reverse_lazy("attendees", kwargs={"eid":eid,}))
+    return redirect(reverse_lazy("attendees"))
 
 #MARK: Events & Details (Home)
 
